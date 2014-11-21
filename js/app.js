@@ -70,6 +70,7 @@ var loadPagesInfo = function(pages){
         // 塞資料到 html 中
         $page.find('.thumbnail img').attr('src',response.data.url); 
         counter++;
+        $page.appendTo(current);
         // 塞完資料以後處理一下斷行
         if(counter===pages.length){
           // 利用 .current div:nth-child(3n)，讓每三個page 斷行
