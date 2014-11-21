@@ -30,7 +30,7 @@ window.fbAsyncInit = function() {
               $('#user').removeClass('hide');
               // ---------------
               // 讀取 like 的列表，並儲存到 likes, 以及下一組資料的連結到 next
-
+              var liikes = response.likes.data;
               //把讀到的資料放進html
               loadPagesInfo(likes);
               // save next request url to moreBtn and show it
@@ -73,6 +73,7 @@ var loadPagesInfo = function(pages){
         // 塞完資料以後處理一下斷行
         if(counter===pages.length){
           // 利用 .current div:nth-child(3n)，讓每三個page 斷行
+          $('.current div:nth-child(3n)').after('div class="clearfix"></div>');
           current.children('div').unwrap();
         }
       });
